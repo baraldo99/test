@@ -22,6 +22,7 @@ if os.path.isdir(repopath):
     shutil.rmtree(repopath)
 subprocess.run(["git", "clone", "git@github.com:TheBitNinja/testass.git"])
 runCommand("git checkout develop")
+runCommand('git config pull.rebase false')
 subprocess.run(["git", "flow", "init", "-d", "--feature", "feature/",  "--bugfix", "bugfix/", "--release", "release/", "--hotfix", "hotfix/", "--support", "support/", "-t","''"], cwd=repopath)
 
 # THIRD FEATURE
@@ -38,6 +39,12 @@ runCommand("git add inventario.md")
 runCommand('git commit -m "close #3" -m "Aggiunta del file schede_madri.md" -m "Modificato il file inventario.md"')
 runCommand('git flow feature publish thirdfeature')
 runCommand('git flow feature finish -k thirdfeature')
+input("Sync Locale")
+runCommand('git pull origin develop')
+input("Resolve merge Locale")
+runCommand("git add inventario.md")
+runCommand('git commit -m "resolve merge conflicts"')
+input("push resolve merge Locale")
 runCommand('git push origin develop')
 print("FEATURE 3 creata")
 
