@@ -42,6 +42,11 @@ runCommand('git flow feature finish -k thirdfeature')
 input("Sync Locale")
 runCommand('git pull origin develop')
 input("Resolve merge Locale")
+writeToFile(repopath+"/inventario.md", '''2076434
+2076324
+- schede_madri.md
+- processori.md
+''')
 runCommand("git add inventario.md")
 runCommand('git commit -m "resolve merge conflicts"')
 input("push resolve merge Locale")
@@ -117,7 +122,7 @@ Elettronica Padovana
 runCommand("git add periferiche/")
 runCommand("git add tastiere.md")
 runCommand("git add inventario.md")
-runCommand('git commit -m "close #6" -m "Aggiunto file tastiere" -m "Modificato file inventario"')
+runCommand('git commit -m "close #6" -m "Aggiunta del file tastiere" -m "Modifica del file inventario"')
 runCommand('git flow feature publish sixthfeature')
 runCommand('git flow feature finish -k sixthfeature')
 runCommand('git push origin develop')
