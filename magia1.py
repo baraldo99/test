@@ -74,7 +74,7 @@ periferiche
 
 Elettronica Padovana
 ''')
-writeToFile(repopath+"/periferiche/vuoto.txt","")
+writeToFile(repopath+"/periferiche/empty.txt","")
 runCommand("git add inventario.md")
 runCommand("git add periferiche/")
 runCommand('git commit -m "close #5" -m "Aggiunta della cartella Periferiche"  -m "Aggiunta del file temporaneo vuoto.txt" -m "Modifica del file inventario.md"')
