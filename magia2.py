@@ -119,8 +119,10 @@ periferiche
 Elettronica Padovana
 ''')
 
+runCommand("rm periferiche/empty.txt")
 runCommand("git add periferiche/")
 runCommand("git add tastiere.md")
+runCommand("git add empty.txt")
 runCommand("git add inventario.md")
 runCommand('git commit -m "close #6" -m "Aggiunta del file tastiere" -m "Modifica del file inventario"')
 runCommand('git flow feature publish sixthfeature')
