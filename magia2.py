@@ -20,7 +20,7 @@ def runCommand(cmd):
 
 if os.path.isdir(repopath):
     shutil.rmtree(repopath)
-subprocess.run(["git", "clone", "git@github.com:TheBitNinja/testass.git"])
+subprocess.run(["git", "clone", f"git@github.com:{username}/{reponame}.git"])
 runCommand("git checkout develop")
 runCommand('git config pull.rebase false')
 subprocess.run(["git", "flow", "init", "-d", "--feature", "feature/",  "--bugfix", "bugfix/", "--release", "release/", "--hotfix", "hotfix/", "--support", "support/", "-t","''"], cwd=repopath)
