@@ -27,13 +27,13 @@ subprocess.run(["git", "flow", "init", "-d", "--feature", "feature/",  "--bugfix
 # FIRST FEATURE
 input("Premi Invio per procedere con la creazione della FEATURE 1")
 
-runCommand("git flow feature start firstfeature")
-appentToFile(repopath+"/inventario.md", "2076434")
-appentToFile(repopath+"/inventario.md", "2076324")
+runCommand("git flow feature start inventario")
+appentToFile(repopath+"/inventario.md", "2079244")
+appentToFile(repopath+"/inventario.md", "2082849")
 runCommand("git add inventario.md")
-runCommand('git commit -m "close #1" -m "Aggiunta del file inventario.md"')
-runCommand('git flow feature publish firstfeature')
-runCommand('git flow feature finish -k firstfeature')
+runCommand('git commit -m "Aggiunto file inventario.md" -m "close #1"')
+runCommand('git flow feature publish inventario')
+runCommand('git flow feature finish -k inventario')
 runCommand('git push origin develop')
 print("FEATURE 1 creata")
 
@@ -43,15 +43,15 @@ input("Premi Invio per procedere con la creazione della FEATURE 2")
 
 runCommand('git fetch --all')
 runCommand('git pull origin develop')
-runCommand('git flow feature start secondfeature')
-appentToFile(repopath+"/processori.md", "2076434")
-appentToFile(repopath+"/processori.md", "2076324")
+runCommand('git flow feature start processori')
+appentToFile(repopath+"/processori.md", "2079244")
+appentToFile(repopath+"/processori.md", "2082849")
 appentToFile(repopath+"/inventario.md", "- processori.md")
 runCommand("git add processori.md")
 runCommand("git add inventario.md")
-runCommand('git commit -m "close #2" -m "Aggiunta del file processori.md" -m "Modificato il file inventario.md"')
-runCommand('git flow feature publish secondfeature')
-runCommand('git flow feature finish -k secondfeature')
+runCommand('git commit -m "Aggiunto file processori.md" -m "Aggiornato file inventario.md" -m "close #2"')
+runCommand('git flow feature publish processori')
+runCommand('git flow feature finish -k processori')
 print("FEATURE 2 creata")
 input("Premi Invio per procedere con la sincronizzazione della FEATURE 2")
 runCommand('git push origin develop')
@@ -62,9 +62,9 @@ input("Premi Invio per procedere con la creazione della FEATURE 5")
 runCommand('git fetch --all')
 runCommand('git pull origin develop')
 runCommand('mkdir periferiche')
-runCommand('git flow feature start fifthfeature')
-writeToFile(repopath+"/inventario.md", '''2076434
-2076324
+runCommand('git flow feature start periferiche')
+writeToFile(repopath+"/inventario.md", '''2079244
+2082849
 
 componenti
 - processori.md
@@ -77,9 +77,9 @@ Elettronica Padovana
 writeToFile(repopath+"/periferiche/empty.txt","")
 runCommand("git add inventario.md")
 runCommand("git add periferiche/")
-runCommand('git commit -m "close #5" -m "Aggiunta della cartella Periferiche"  -m "Aggiunta del file temporaneo vuoto.txt" -m "Modifica del file inventario.md"')
-runCommand("git flow feature publish fifthfeature")
-runCommand("git flow feature finish -k fifthfeature")
+runCommand('git commit -m "Aggiunta cartella periferiche" -m "Aggiunto file temporaneo empty.txt" -m "Aggiorato file inventario.md" -m "close #5"')
+runCommand("git flow feature publish periferiche")
+runCommand("git flow feature finish -k periferiche")
 runCommand("git push origin develop")
 print("FEATURE 5 creata")
 
@@ -87,12 +87,12 @@ print("FEATURE 5 creata")
 input("Premi Invio per procedere con la creazione della FEATURE 7")
 runCommand('git fetch --all')
 runCommand('git pull origin develop')
-runCommand('git flow feature start seventhfeature')
-writeToFile(repopath+"/periferiche/mouse.md",'''2076434
-2076324
+runCommand('git flow feature start mouse')
+writeToFile(repopath+"/periferiche/mouse.md",'''2079244
+2082849
 ''')
-writeToFile(repopath+"/inventario.md", '''2076434
-2076324
+writeToFile(repopath+"/inventario.md", '''2079244
+2082849
 
 componenti
 - processori.md
@@ -108,8 +108,8 @@ Elettronica Padovana
 runCommand("git add periferiche/")
 runCommand("git add mouse.md")
 runCommand("git add inventario.md")
-runCommand('git commit -m "close #7" -m "Aggiunta del file mouse" -m "Modifica del file inventario"')
-runCommand('git flow feature publish seventhfeature')
-runCommand('git flow feature finish -k seventhfeature')
+runCommand('git commit -m "Aggiunto file mouse.md" -m "Aggiornato file inventario.md" -m "close #7"')
+runCommand('git flow feature publish mouse')
+runCommand('git flow feature finish -k mouse')
 runCommand('git push origin develop')
 print("FEATURE 7 creata")
