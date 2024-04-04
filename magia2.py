@@ -30,20 +30,20 @@ input("Premi Invio per procedere con la creazione della FEATURE 3")
 
 runCommand('git fetch --all')
 runCommand('git pull origin develop')
-runCommand('git flow feature start schede_madri')
-appentToFile(repopath+"/schede_madri.md", "2079244")
-appentToFile(repopath+"/schede_madri.md", "2082849")
+runCommand('git flow feature start terzafeature')
+appentToFile(repopath+"/schede_madri.md", "2068226")
+appentToFile(repopath+"/schede_madri.md", "2082852")
 appentToFile(repopath+"/inventario.md", "- schede_madri.md")
 runCommand("git add schede_madri.md")
 runCommand("git add inventario.md")
-runCommand('git commit -m "Aggiunto file schede_madri.md" -m "Aggiornato file inventario.md" -m "close #3"')
-runCommand('git flow feature publish schede_madri')
-runCommand('git flow feature finish -k schede_madri')
+runCommand('git commit -m "aggiunto il file schede_madri.md" -m "aggiornato il file inventario.md" -m "close #3"')
+runCommand('git flow feature publish terzafeature')
+runCommand('git flow feature finish -k terzafeature')
 input("Sync Locale")
 runCommand('git pull origin develop')
 input("Resolve merge Locale")
-writeToFile(repopath+"/inventario.md", '''2079244
-2082849
+writeToFile(repopath+"/inventario.md", '''2068226
+2082852
 - schede_madri.md
 - processori.md
 ''')
@@ -62,7 +62,7 @@ runCommand('git flow release start -F Version_1.0')
 appentToFile(repopath+"/inventario.md", "\nElettronica Padovana")
 runCommand("git add inventario.md")
 time.sleep(2)
-runCommand('git commit -m "Aggiornato file inventario.md"')
+runCommand('git commit -m "aggiornato il file inventario.md"')
 runCommand('git flow release publish Version_1.0')
 runCommand('git push -f origin main')
 runCommand('git flow release finish Version_1.0 -m "Version_1.0" 1.0.0')
@@ -74,12 +74,12 @@ input("Premi Invio per procedere con la creazione della FEATURE 4")
 
 runCommand('git fetch --all')
 runCommand('git pull origin main')
-runCommand('git flow feature start componenti')
+runCommand('git flow feature start quartafeature')
 runCommand("mkdir componenti")
 runCommand("mv processori.md ./componenti")
 runCommand("mv schede_madri.md ./componenti")
-writeToFile(repopath+"/inventario.md", '''2079244
-2082849
+writeToFile(repopath+"/inventario.md", '''2068226
+2082852
 
 componenti
 - processori.md
@@ -91,9 +91,9 @@ runCommand("git add inventario.md")
 runCommand("git add processori.md")
 runCommand("git add schede_madri.md")
 runCommand("git add componenti/")
-runCommand('git commit -m "Aggiunta cartella componenti"  -m "Aggiornato file inventario.md" -m "close #4"')
-runCommand("git flow feature publish componenti")
-runCommand("git flow feature finish -k componenti")
+runCommand('git commit -m "aggiunta la cartella componenti"  -m "aggiornato il file inventario.md" -m "close #4"')
+runCommand("git flow feature publish quartafeature")
+runCommand("git flow feature finish -k quartafeature")
 runCommand("git push origin develop")
 print("FEATURE 4 creata")
 
@@ -102,12 +102,12 @@ input("Premi Invio per procedere con la creazione della FEATURE 6")
 
 runCommand('git fetch --all')
 runCommand('git pull origin develop')
-runCommand('git flow feature start tastiere')
-writeToFile(repopath+"/periferiche/tastiere.md",'''2079244
-2082849
+runCommand('git flow feature start sestafeature')
+writeToFile(repopath+"/periferiche/tastiere.md",'''2068226
+2082852
 ''')
-writeToFile(repopath+"/inventario.md", '''2079244
-2082849
+writeToFile(repopath+"/inventario.md", '''2068226
+2082852
 
 componenti
 - processori.md
@@ -124,9 +124,9 @@ runCommand("git add periferiche/")
 runCommand("git add tastiere.md")
 runCommand("git add empty.txt")
 runCommand("git add inventario.md")
-runCommand('git commit -m "Aggiunto file tastiere.md" -m "Rimosso file temporaneo empty.txt" -m "Aggiornato file inventario.md" -m "close #6"')
-runCommand('git flow feature publish tastiere')
-runCommand('git flow feature finish -k tastiere')
+runCommand('git commit -m "aggiunto il file tastiere.md" -m "rimosso il file temporaneo empty.txt" -m "aggiornato il file inventario.md" -m "close #6"')
+runCommand('git flow feature publish sestafeature')
+runCommand('git flow feature finish -k sestafeature')
 runCommand('git push origin develop')
 print("FEATURE 6 creata")
 
